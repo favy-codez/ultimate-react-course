@@ -1,3 +1,7 @@
+iimport React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+
 const pizzaData = [
   {
     name: "Focaccia",
@@ -42,3 +46,42 @@ const pizzaData = [
     soldOut: false,
   },
 ];
+
+function App() {
+  return (
+    <div className="container">
+      <Header />
+      <Menu />
+      <Footer />
+    </div>
+  );
+}
+
+
+function Header (){
+  return (
+    <header>
+       <h1 className="header">FAST REACT PIZZA CO.</h1>
+    </header>
+  )
+}
+
+function Menu (){
+  return (
+    <div className="menu">
+      <h2>Our Menu</h2>
+      <Pizza/>
+      <Pizza/>
+      <Pizza/>
+      <Pizza/>
+    </div>
+  )
+}
+
+function Footer (){
+  const hour = new Date().getHours();
+  const openHour = 12;
+  const closeHour = 22;
+  const isOpen = hour >= openHour && hour <= closeHour;
+  console.log(isOpen);
+}
